@@ -1,14 +1,14 @@
-import { Outlet, NavLink } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import { Link, Wrapper} from './Navigation.styled';
 
 const Navigation = () => {
     return (
-        <div>
-            <nav>
-                <NavLink to="/home">Home</NavLink>
-                <NavLink to="/movies">Movies</NavLink>
-            </nav>
-        </div>
-    )
-}
+            <Wrapper>
+                <Link to="/home">Home</Link>
+                <Link to="/movies">Movies</Link>
+                <Outlet />
+            </Wrapper>
+    );
+};
 
 export default Navigation;
