@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { GetMovies } from "../services/MoviesApi";
+import { getMovies } from "../services/MoviesApi";
 import { Loader } from "../components/Loader/Loader";
 
 const useFetchMovies = () => {
@@ -12,7 +12,7 @@ const useFetchMovies = () => {
       async function fetchMovies () {
           setLoading(true)
           try {
-            const movies = await GetMovies()
+            const movies = await getMovies()
             setMovies(movies)
           } catch (error) {
             setError(error)
