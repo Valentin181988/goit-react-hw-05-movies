@@ -5,13 +5,14 @@ import { HomePage } from './pages/HomePage';
 import { MovieItem} from './pages/MovieItem';
 import { Review } from './pages/Review';
 import { Credits } from './pages/Credits';
+import { FindMovie } from './pages/FindMovie';
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route path="home" element={<HomePage />}/>
-        <Route path="movies" element={<div>Hello!</div>}/>
+        <Route path="movies" element={<FindMovie />}/>
         <Route path="movies/:movieId" element={<MovieItem />}>
             <Route path="cast" element={<Credits />}/>
             <Route path="reviews" element={<Review />}/>

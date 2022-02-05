@@ -6,7 +6,7 @@ export const ItemMovie = ({movieItem}) => {
     return (
         <>
           <div>
-              <img src={`https://image.tmdb.org/t/p/w300${movieItem.poster_path}`} />
+              <img src={`https://image.tmdb.org/t/p/w300${movieItem.poster_path}`} alt="Poster"/>
           </div>
           <div>
             <h1>{movieItem.title}</h1>

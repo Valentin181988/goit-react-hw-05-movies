@@ -43,4 +43,14 @@ export const getMoviesCast = async (movieId) => {
   } 
 };
 
+export const getKeywords = async (movieId) => {
+  try {
+    const response = await axios.get(`3/movie/${movieId}/keywords?api_key=${KEY}`);
+    const keyWords = response.data;
+    return keyWords;
+  } catch(error) {
+    toast.error("keyWords is not found!")
+  } 
+};
+
 
