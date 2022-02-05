@@ -9,4 +9,22 @@ export const GetMovies = async () => {
     /* const quantity = response.data.total_results; */
     
     return movies;
+  };
+
+
+export const GetMovieById = async (movieId) => {
+  const response = await axios.get(`3/movie/${movieId}?api_key=${KEY}`);
+  const movie = response.data;
+
+  return movie;
+}
+
+/* async fetchMovieDetails(movieId) {
+  try {
+    const response = await axios.get(`3/movie/${movieId}?api_key=${KEY}`);
+    const movies = await response.data;
+    return movies;
+  } catch (error) {
+    console.log(error.message);
   }
+} */
