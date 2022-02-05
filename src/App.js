@@ -4,6 +4,7 @@ import Navigation from './components/Navigation/Navigation';
 import { HomePage } from './pages/HomePage';
 import { MovieItem} from './pages/MovieItem';
 import { Review } from './pages/Review';
+import { Credits } from './pages/Credits';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Route path="home" element={<HomePage />}/>
         <Route path="movies" element={<div>Hello!</div>}/>
         <Route path="movies/:movieId" element={<MovieItem />}>
-            <Route path="cast" element={<div>Hihi</div>}/>
+            <Route path="cast" element={<Credits />}/>
             <Route path="reviews" element={<Review />}/>
         </Route>
         <Route path="*" element={<Navigate to="/"/>}/>

@@ -33,4 +33,14 @@ export const getMoviesOverview = async (movieId) => {
   } 
 };
 
+export const getMoviesCast = async (movieId) => {
+  try {
+    const response = await axios.get(`3/movie/${movieId}/credits?api_key=${KEY}`);
+    const cast = response.data;
+    return cast;
+  } catch(error) {
+    toast.error("Cast is not found!")
+  } 
+};
+
 
