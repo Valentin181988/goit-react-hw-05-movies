@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { ItemMovie } from "../components/ItemMovie/ItemMovie";
@@ -30,6 +30,7 @@ export const MovieItem = () => {
         <main>
           {loading && <Loader />}
           {movieItem && <ItemMovie movieItem={movieItem}/>}
+          <Outlet />
         </main>
     )
 };

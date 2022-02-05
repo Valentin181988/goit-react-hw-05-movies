@@ -9,8 +9,10 @@ function App() {
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route path="home" element={<HomePage />}/>
-        <Route path="movies" element={<div>Hello!</div>} />
-        <Route path="movies/:movieId" element={<MovieItem />}/>
+        <Route path="movies" element={<div>Hello!</div>}/>
+        <Route path="movies/:movieId" element={<MovieItem />}>
+            <Route path="reviews" element={<div>Hahaha</div>}/>
+        </Route>
         <Route path="*" element={<Navigate to="/"/>}/>
       </Route>
     </Routes>

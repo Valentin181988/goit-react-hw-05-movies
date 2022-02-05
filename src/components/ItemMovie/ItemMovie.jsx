@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export const ItemMovie = ({movieItem}) => {
    const genres = movieItem.genres;
 
@@ -7,13 +9,17 @@ export const ItemMovie = ({movieItem}) => {
               <img src={`https://image.tmdb.org/t/p/w300${movieItem.poster_path}`} />
           </div>
           <div>
-              <h1>{movieItem.title}</h1>
+            <h1>{movieItem.title}</h1>
 
-              <h2>Overview</h2>
-              <p>{movieItem.overview}</p>
+            <h2>Overview</h2>
+            <p>{movieItem.overview}</p>
 
-              <h2>Genres</h2>
-              {genres.map(genre => (<p key={genre.id}>{genre.name}</p>))}
+            <h2>Genres</h2>
+            {genres.map(genre => (<p key={genre.id}>{genre.name}</p>))}
+          </div>
+           
+          <div>
+            <Link to="reviews">Genres</Link>  
           </div>    
         </>
     )
