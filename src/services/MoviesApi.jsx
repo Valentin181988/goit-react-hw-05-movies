@@ -24,20 +24,13 @@ export const getMovieById = async (movieId) => {
 };
 
 export const getMoviesOverview = async (movieId) => {
-
-  const response = await axios.get(`3/movie/${movieId}/reviews?api_key=${KEY}`);
-  const movie = response.data;
-
-  return movie;
-}
-
-
-/* async fetchMovieDetails(movieId) {
   try {
-    const response = await axios.get(`3/movie/${movieId}?api_key=${KEY}`);
-    const movies = await response.data;
-    return movies;
-  } catch (error) {
-    console.log(error.message);
-  }
-} */
+    const response = await axios.get(`3/movie/${movieId}/reviews?api_key=${KEY}`);
+    const rewiews = response.data;
+    return rewiews;
+  } catch(error) {
+    toast.error("Reviews is not found!")
+  } 
+};
+
+

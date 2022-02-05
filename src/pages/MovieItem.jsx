@@ -15,7 +15,7 @@ export const MovieItem = () => {
     async function getItemMovie() {
       setLoading(true)
       try {
-      getMovieById(movieId).then(movieItem => setMovieItem(movieItem)); 
+      await getMovieById(movieId).then(movieItem => setMovieItem(movieItem)); 
       } catch(error) {
         console.log("Error")
         toast.error('The movie is not found')

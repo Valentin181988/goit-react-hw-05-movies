@@ -19,7 +19,10 @@ export const ItemMovie = ({movieItem}) => {
           </div>
            
           <div>
-            <Link to="reviews">Genres</Link>  
+            <ul>
+              <li><Link to="cast">Cast</Link></li>
+              <li><Link to="reviews">Reviews</Link></li>
+            </ul>    
           </div>    
         </>
     )
