@@ -1,6 +1,5 @@
 export const MoviesCast = ({cast}) => {
     const actors = cast.cast;
-    console.log("actors", actors)
 
     return (
         <div>

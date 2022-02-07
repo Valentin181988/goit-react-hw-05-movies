@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 export const ItemMovie = ({movieItem}) => {
    const genres = movieItem.genres;
+   const {title, overview } = movieItem;
 
     return (
         <>
@@ -10,10 +11,10 @@ export const ItemMovie = ({movieItem}) => {
               <img src={`https://image.tmdb.org/t/p/w300${movieItem.poster_path}`} alt="Poster"/>
           </div>
           <div>
-            <h1>{movieItem.title}</h1>
+            <h1>{title}</h1>
 
             <h2>Overview</h2>
-            <p>{movieItem.overview}</p>
+            <p>{overview}</p>
 
             <h2>Genres</h2>
             {genres.map(genre => (<p key={genre.id}>{genre.name}</p>))}
