@@ -4,13 +4,14 @@ export const Reviews = ({reviews}) => {
     
     return(
         <>
-            {movieReviews.length > 0 ? movieReviews.map(review => 
-              (<ul>
+          <ul>
+              {movieReviews.length > 0 ? movieReviews.map(review => (
                 <li key={review.id}>
                   <h3>{review.author}</h3>
                   <p>{review.content}</p>
                 </li>
-              </ul>)) : <p>Sorry there are no reviews yet!</p>}
+              )) : <p>Sorry there are no reviews yet!</p>}
+          </ul>
         </>
     );
 }
