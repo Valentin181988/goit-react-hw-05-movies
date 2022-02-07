@@ -12,20 +12,20 @@ export const Credits = () => {
 
     useEffect(() => {
         async function getCast() {
-          setLoading(true)
+          /* setLoading(true) */
           try {
             const cast = await getMoviesCast(movieId);
             setCast(cast); 
           } catch(error) {
             console.log("Error")
-          } finally { setLoading(false) }
+          } /* finally { setLoading(false) } */
         }
         getCast();
       }, [movieId]);
 
     return (
         <>
-          {loading && <Loader />}
+          {/* {loading && <Loader />} */}
           {cast && <MoviesCast cast={cast}/>}
         </>
     );
