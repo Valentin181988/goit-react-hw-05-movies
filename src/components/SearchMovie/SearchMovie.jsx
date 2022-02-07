@@ -8,7 +8,7 @@ export const SearchMovie = ({movies}) => {
             <ul>
                 {movies && movies.map(movie => (
                     <li key={nanoid()}>
-                    <Link to="">{movie.title}</Link>
+                      <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
                     </li>
                 ))}
             </ul>

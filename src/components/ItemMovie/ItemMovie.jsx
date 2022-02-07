@@ -5,6 +5,7 @@ export const ItemMovie = ({movieItem}) => {
 
     return (
         <>
+          <Link to="/home">Go back</Link>
           <div>
               <img src={`https://image.tmdb.org/t/p/w300${movieItem.poster_path}`} alt="Poster"/>
           </div>

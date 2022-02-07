@@ -1,5 +1,4 @@
-import { useParams, Outlet, useSearchParams } from "react-router-dom";
-import { useNavigate } from "react-router";
+import { Outlet, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { FindMoviesByKeywords } from "../components/Movies/FindByKeyWords";
@@ -19,6 +18,7 @@ export const FindMovie = () => {
           setKeyWord(keyWord)
           setSearchParams({query: keyWord})
     };
+
 
     useEffect(() => {
       if(keyWord.length === 0) {
