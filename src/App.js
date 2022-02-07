@@ -10,7 +10,8 @@ import { FindMovie } from './pages/FindMovie';
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Navigation />}>
+      <Route path="/" element={<Navigation />} >
+        <Route index element={<Navigate to="/home"/>}/> 
         <Route path="home" element={<HomePage />}/>
         <Route path="movies" element={<FindMovie />}/>
         <Route path="movies/:movieId" element={<MovieItem />}>
