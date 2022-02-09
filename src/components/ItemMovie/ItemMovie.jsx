@@ -19,13 +19,15 @@ export const ItemMovie = ({movieItem}) => {
             <h2>Genres</h2>
             {genres.map(genre => (<p key={genre.id}>{genre.name}</p>))}
           </div>
+          <hr/>
            
           <div>
             <ul>
               <li><Link to="cast">Cast</Link></li>
               <li><Link to="reviews">Reviews</Link></li>
             </ul>    
-          </div>    
+          </div>
+          <hr/>    
         </>
     )
 };
