@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 
-export const ItemMovie = ({movieItem}) => {
+export const ItemMovie = ({movieItem, location}) => {
    const genres = movieItem.genres;
    const {title, overview } = movieItem;
+   console.log("Item", location)
 
     return (
         <>
-          <Link to="/home">Go back</Link>
+          <Link to={location?.state?.from ?? "/home"}>Go back</Link>
           <div>
               <img src={`https://image.tmdb.org/t/p/w300${movieItem.poster_path}`} alt="Poster"/>
           </div>

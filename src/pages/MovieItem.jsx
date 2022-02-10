@@ -1,4 +1,4 @@
-import { useParams, Outlet } from "react-router-dom";
+import { useParams, Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { ItemMovie } from "../components/ItemMovie/ItemMovie";
@@ -10,6 +10,7 @@ export const MovieItem = () => {
   const {movieId} = useParams();
   const [movieItem, setMovieItem] = useState(null);
   const [loading, setLoading] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     async function getItemMovie() {
@@ -29,7 +30,7 @@ export const MovieItem = () => {
     return (
         <main>
           {loading && <Loader />}
-          {movieItem && <ItemMovie movieItem={movieItem}/>}
+          {movieItem && <ItemMovie movieItem={movieItem} location={location}/>}
           <Outlet />
         </main>
     )

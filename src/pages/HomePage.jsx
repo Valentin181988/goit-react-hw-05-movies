@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getMovies } from "../services/MoviesApi";
 import { Loader } from "../components/Loader/Loader";
@@ -7,6 +7,7 @@ const useFetchMovies = () => {
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    
   
     useEffect(() => {
       async function fetchMovies () {
@@ -28,15 +29,17 @@ const useFetchMovies = () => {
 
 export const HomePage = () => {
 
+  const location = useLocation();
   const {movies, loading, error} = useFetchMovies();
-  console.log(movies)
+
+  console.log("home", location)
 
     return (
         <main>
          <h1>Trending today</h1>
          {loading && <Loader />}
          {!error && (<ul>
-             {movies.map(movie => (<li key={movie.id}><Link to={`/movies/${movie.id}`}>{movie.title}</Link></li>) )}
+             {movies.map(movie => (<li key={movie.id}><Link to={`/movies/${movie.id}`} state={{from: location}}>{movie.title}</Link></li>) )}
          </ul>)}
         </main>
    );

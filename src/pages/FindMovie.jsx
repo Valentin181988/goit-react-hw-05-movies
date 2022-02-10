@@ -1,4 +1,4 @@
-import { Outlet, useSearchParams } from "react-router-dom";
+import { Outlet, useSearchParams, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { FindMoviesByKeywords } from "../components/Movies/FindByKeyWords";
@@ -12,6 +12,7 @@ export const FindMovie = () => {
     const [loading, setLoading] = useState(false);
     const [movies, setMovies] = useState(null);
     const [searchParams, setSearchParams] = useSearchParams({});
+    const location = useLocation();
 
 
     const handleFormSubmit = keyWord => {
@@ -40,7 +41,7 @@ export const FindMovie = () => {
         <main>
           {loading && <Loader />}
           <FindMoviesByKeywords onSubmit={handleFormSubmit} />
-          <SearchMovie movies={movies}/>
+          <SearchMovie movies={movies} location={location}/>
           <Outlet />
         </main>
     )
