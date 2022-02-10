@@ -32,8 +32,6 @@ export const HomePage = () => {
   const location = useLocation();
   const {movies, loading, error} = useFetchMovies();
 
-  console.log("home", location)
-
     return (
         <main>
          <h1>Trending today</h1>

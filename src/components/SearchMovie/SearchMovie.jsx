@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const SearchMovie = ({movies, location}) => {
-
-    console.log("search", location)
+export const RenderSearchMovie = ({movies, location}) => {
 
     return(
         <div>

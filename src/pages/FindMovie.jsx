@@ -4,7 +4,7 @@ import { toast } from "react-hot-toast";
 import { FindMoviesByKeywords } from "../components/Movies/FindByKeyWords";
 import { getKeywords } from "../services/MoviesApi";
 import { Loader } from "../components/Loader/Loader";
-import { SearchMovie } from "../components/SearchMovie/SearchMovie";
+import { RenderSearchMovie } from "../components/SearchMovie/SearchMovie";
 
 export const FindMovie = () => {
 
@@ -19,7 +19,7 @@ export const FindMovie = () => {
           setSearchParams({query: query})
     };
 
-    console.log(query)
+    
 
     useEffect(() => {
       if(query) {
@@ -36,10 +36,11 @@ export const FindMovie = () => {
       }, [query]);
   
     return (
+      
         <main>
           {loading && <Loader />}
           <FindMoviesByKeywords onSubmit={handleFormSubmit} />
-          <SearchMovie movies={movies} location={location}/>
+          {movies ? <RenderSearchMovie movies={movies} location={location}/> : <div>No movie</div>}
           <Outlet />
         </main>
     )

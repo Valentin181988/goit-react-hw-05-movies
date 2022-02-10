@@ -7,7 +7,9 @@ export const Navigation = () => {
             <Wrapper>
                 <Link to="/home">Home</Link>
                 <Link to="/movies">Movies</Link>
+
                 <hr/>
+                
                 <Outlet />
                 <Toaster />
             </Wrapper>

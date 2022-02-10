@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { Input, SearchBtn } from './FindByKeyWords.styled';
 
 export const FindMoviesByKeywords = ({onSubmit}) => {
 
@@ -14,7 +15,7 @@ export const FindMoviesByKeywords = ({onSubmit}) => {
         event.preventDefault();
 
         if (keyWords.trim() === '') {
-            return toast('Please enter a picture name!')
+            return toast('Please enter a movie name!')
         };
 
         onSubmit(keyWords);
@@ -24,14 +25,14 @@ export const FindMoviesByKeywords = ({onSubmit}) => {
     return(
         <>
          <form onSubmit={handleSubmit}>
-           <input
+           <Input
                 type="text"
                 value={keyWords}
                 onChange={handleInputChange}
                 autoComplete="off"
                 autoFocus
-                placeholder="Search movie"></input>
-           <button type="submit">Search</button>
+                placeholder="Search movie"></Input>
+           <SearchBtn type="submit">Search</SearchBtn>
          </form>
         </>
     );
