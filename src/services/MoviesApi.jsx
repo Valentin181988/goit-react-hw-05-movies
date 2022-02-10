@@ -43,8 +43,8 @@ export const getMoviesCast = async (movieId) => {
   } 
 };
 
-export const getKeywords = async (keyword) => {
-  const encoded = encodeURI(keyword);
+export const getKeywords = async (query) => {
+  const encoded = encodeURI(query);
   try {
     const response = await axios.get(`3/search/movie?api_key=${KEY}&query=${encoded}`);
     const movies = response.data.results;

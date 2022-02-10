@@ -8,34 +8,32 @@ import { SearchMovie } from "../components/SearchMovie/SearchMovie";
 
 export const FindMovie = () => {
 
-    const [keyWord, setKeyWord] = useState('');
     const [loading, setLoading] = useState(false);
     const [movies, setMovies] = useState(null);
     const [searchParams, setSearchParams] = useSearchParams({});
     const location = useLocation();
+    const query = searchParams.get('query');
 
 
-    const handleFormSubmit = keyWord => {
-          setKeyWord(keyWord)
-          setSearchParams({query: keyWord})
+    const handleFormSubmit = query => {
+          setSearchParams({query: query})
     };
 
+    console.log(query)
 
     useEffect(() => {
-      if(keyWord.length === 0) {
-        return;
-      }
+      if(query) {
         async function getMovieByKeyWord() {
           setLoading(true)
           try {
-          await getKeywords(keyWord).then(movies => setMovies(movies)) 
+          await getKeywords(query).then(movies => setMovies(movies)) 
           } catch(error) {
             toast.error('The movie is not found')
           } finally { setLoading(false) }
         }
         getMovieByKeyWord();
-
-      }, [keyWord]);
+      } 
+      }, [query]);
   
     return (
         <main>
