@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { Wrapper, PosterWrapper, GoBackBtn } from '../ItemMovie/ItemMovie.styled';
 
 export const ItemMovie = ({movieItem, location}) => {
    const genres = movieItem.genres;
    const {title, overview, budget, popularity} = movieItem;
-
-   console.log(movieItem)
 
     return (
         <>
@@ -43,3 +42,8 @@ export const ItemMovie = ({movieItem, location}) => {
         </>
     )
 };
+
+ItemMovie.propTypes = {
+  movieItem: PropTypes.object,
+  location: PropTypes.object
+}

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const MoviesCast = ({cast}) => {
     const actors = cast.cast;
 
@@ -14,4 +16,8 @@ export const MoviesCast = ({cast}) => {
             </ul>
         </div>
     )
-}
+};
+
+MoviesCast.propTypes = {
+    cast: PropTypes.object
+};

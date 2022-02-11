@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { toast } from 'react-hot-toast';
 import { Input, SearchBtn } from './FindByKeyWords.styled';
 
@@ -36,4 +37,8 @@ export const FindMoviesByKeywords = ({onSubmit}) => {
          </form>
         </>
     );
+};
+
+FindMoviesByKeywords.propTypes = {
+    onSubmit: PropTypes.func
 }

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const Reviews = ({reviews}) => {
     
     const movieReviews = reviews.results;
@@ -14,4 +16,8 @@ export const Reviews = ({reviews}) => {
           </ul>
         </>
     );
+};
+
+Reviews.propTypes = {
+  reviews: PropTypes.object
 }

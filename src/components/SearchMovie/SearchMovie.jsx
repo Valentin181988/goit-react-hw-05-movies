@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 export const RenderSearchMovie = ({movies, location}) => {
 
@@ -13,4 +14,9 @@ export const RenderSearchMovie = ({movies, location}) => {
             </ul>
         </div>
     )
+};
+
+RenderSearchMovie.propTypes = {
+    movies: PropTypes.array,
+    location: PropTypes.object
 }

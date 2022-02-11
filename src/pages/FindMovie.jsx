@@ -19,8 +19,6 @@ export const FindMovie = () => {
           setSearchParams({query: query})
     };
 
-    
-
     useEffect(() => {
       if(query) {
         async function getMovieByKeyWord() {
@@ -34,13 +32,30 @@ export const FindMovie = () => {
         getMovieByKeyWord();
       } 
       }, [query]);
-  
+
+      /* console.log(query) */
+
+      const renderContent = () => {
+
+        let errorName = `Sorry, no movie with "${query}" name was found`;
+
+        if (!Array.isArray(movies)) {
+          return "";
+        };
+
+        if (movies.length === 0) {
+           return (
+           <div>{errorName}</div>);
+        } 
+        return <RenderSearchMovie movies={movies} location={location}/>;
+      };
+    
     return (
       
         <main>
           {loading && <Loader />}
           <FindMoviesByKeywords onSubmit={handleFormSubmit} />
-          {movies ? <RenderSearchMovie movies={movies} location={location}/> : <div>No movie</div>}
+          {renderContent(movies)}
           <Outlet />
         </main>
     )
